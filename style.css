@@ -1,0 +1,225 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fdfdfd;
+}
+
+.parent {
+  width: 100%; /* Set parent width to 100% */
+  height: 100%; /* Set parent height to 100% */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  max-width: 70vw;
+  max-height: 70vh;
+  background: #000000;
+  position: relative;
+  display: grid;
+  place-content: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+#logo-main,
+#logo-second {
+  height: 100%;
+}
+
+#logo-main {
+  fill: #ffc963;
+}
+
+#logo-second {
+  fill: none;
+  stroke: #ffc963;
+  stroke-width: 1px;
+}
+
+.border {
+  position: absolute;
+  border-radius: 5px;
+  inset: 0px;
+  border: 3px solid #ffc963;
+  opacity: 0;
+  transform: rotate(360deg);
+  transition: all 1s ease-in-out;
+}
+
+.bottom-text {
+  position: absolute;
+  left: 50%;
+  bottom: 13px;
+  transform: translateX(-50%);
+  font-size: 6px;
+  text-transform: uppercase;
+  padding: 0px 5px 0px 8px;
+  color: #ffc963;
+  background: #000000;
+  opacity: 0;
+  letter-spacing: 7px;
+  transition: all 0.6s ease-in-out;
+}
+
+.content {
+  transition: all 0.5s ease-in-out;
+}
+
+.content .logo {
+  height: 35px;
+  position: relative;
+  width: 33px;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+}
+
+.content .logo .logo1 {
+  height: 33px;
+  position: absolute;
+  left: 0;
+}
+
+.content .logo .logo2 {
+  height: 34px;
+  position: absolute;
+  left: 34px;
+}
+
+/*  */
+
+.logo2 {
+  display: flex;
+  align-items: center;
+  fill: #ffc963;
+}
+
+.logo-text {
+  font-size: 38px;
+  fill: #cfb688;
+  color: #ffc963 !important;
+  padding-bottom: 5px;
+}
+
+/*  */
+
+.content .logo .trail {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.content .logo-bottom-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 30px;
+  color: #ffc963;
+  padding-left: 8px;
+  font-size: 12px;
+  opacity: 0;
+  letter-spacing: none;
+  transition: all 0.5s ease-in-out 0.5s;
+}
+
+.card:hover {
+  border-radius: 0;
+  transform: scale(1.41);
+}
+
+.card:hover .logo {
+  width: 190.5px;
+  animation: opacity 1s ease-in-out;
+}
+
+.card:hover .border {
+  inset: 15px;
+  opacity: 1;
+  transform: rotate(0);
+}
+
+.card:hover .bottom-text {
+  letter-spacing: 3px;
+  opacity: 1;
+  transform: translateX(-50%);
+}
+
+.card:hover .content .logo-bottom-text {
+  opacity: 1;
+  letter-spacing: 1.5px;
+}
+
+.card:hover .trail {
+  animation: trail 1s ease-in-out;
+}
+
+@keyframes opacity {
+  0% {
+    border-right: 1px solid transparent;
+  }
+
+  10% {
+    border-right: 1px solid #ffc963;
+  }
+  50% {
+    border-right: 1px solid #ffc963;
+  }
+
+  80% {
+    border-right: 1px solid #ffc963;
+  }
+
+  100% {
+    border-right: 1px solid transparent;
+  }
+}
+
+@keyframes trail {
+  0% {
+    background: linear-gradient(
+      90deg,
+      rgba(189, 159, 103, 0) 90%,
+      rgb(189, 159, 103) 100%
+    );
+    opacity: 0;
+  }
+
+  30% {
+    background: linear-gradient(
+      90deg,
+      rgba(189, 159, 103, 0) 70%,
+      rgb(189, 159, 103) 100%
+    );
+    opacity: 1;
+  }
+
+  70% {
+    background: linear-gradient(
+      90deg,
+      rgba(189, 159, 103, 0) 70%,
+      rgb(189, 159, 103) 100%
+    );
+    opacity: 1;
+  }
+
+  95% {
+    background: linear-gradient(
+      90deg,
+      rgba(189, 159, 103, 0) 90%,
+      rgb(189, 159, 103) 100%
+    );
+    opacity: 0;
+  }
+}
